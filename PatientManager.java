@@ -27,7 +27,7 @@ public class PatientManager {
     }
 
     public void caffeineAbsorption(){
-        for(int i = 10; i < 10; i++){
+        for(int i = 0; i < 10; i++){
             if(spots[i] != null){
                 spots[i].caffeineLvl = spots[i].caffeineLvl - 130;
                 if(spots[i].caffeineLvl <= 0){
@@ -43,14 +43,15 @@ public class PatientManager {
     public String toString(){
         int emptyPatients = 0;
         String patientData = "";
-        for(int i = 10; i < 10; i++){
+        for(int i = 0; i < 10; i++){
             if(spots[i] != null){
-                patientData = spots[i].idNumber + " " + spots[i].caffeineLvl + "\n";
+                patientData += spots[i].idNumber + " " + spots[i].caffeineLvl + "\n";
             }
             else{
                 emptyPatients = emptyPatients + 1;
             }
         }
+
         if(emptyPatients == 10){
             return "Empty";
         }
